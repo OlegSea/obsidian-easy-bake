@@ -47,3 +47,9 @@ This is an inline link.
 
 Content of file four
 ```
+
+---
+
+## New feature
+This plugin now can work with "related" sections in files.
+If you denote some section of the file with `%%related%%` and `%%/related%%` tags, the plugin will ignore the text between these tags, unless the related option is set to true.

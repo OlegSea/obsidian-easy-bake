@@ -8,6 +8,7 @@ export interface BakeSettings {
   bakeEmbeds: boolean;
   bakeInList: boolean;
   convertFileLinks: boolean;
+  bakeRelated: boolean;
 }
 
 const DEFAULT_SETTINGS: BakeSettings = {
@@ -15,6 +16,7 @@ const DEFAULT_SETTINGS: BakeSettings = {
   bakeEmbeds: true,
   bakeInList: true,
   convertFileLinks: true,
+  bakeRelated: false,
 };
 
 export default class EasyBake extends Plugin {

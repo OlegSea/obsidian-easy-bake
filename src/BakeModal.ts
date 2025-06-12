@@ -83,6 +83,18 @@ export class BakeModal extends Modal {
         })
       );
 
+    new Setting(contentEl)
+      .setName('Bake related files')
+      .setDesc('If there is a section denoted by %%related%% and %%/related%%, should the extension bake its contents')
+      .addToggle((toggle) =>
+        toggle.setValue(settings.bakeRelated).onChange((value) => {
+          settings.bakeRelated = value;
+          plugin.saveSettings();
+        })
+      );
+
+
+
     new Setting(contentEl).setName('Output file name').then((setting) => {
       new Setting(contentEl).then((setting) => {
         setting.addButton((btn) =>
