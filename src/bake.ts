@@ -31,13 +31,13 @@ export async function bake(
   let text = await vault.cachedRead(file);
   const cache = metadataCache.getFileCache(file);
 
-  // Find and remove text that is between %%related%% and %%/related%% comments
-  // do it only if the setting `bakeRelated` is disabled
-  if (!settings.bakeRelated) {
-    const relatedStart = text.indexOf('%%related%%');
-    const relatedEnd = text.indexOf('%%/related%%', relatedStart + 1);
-    if (relatedStart !== -1 && relatedEnd !== -1) {
-      text = text.substring(0, relatedStart) + text.substring(relatedEnd + 12);
+  // Find and remove text that is between %%hidden%% and %%/hidden%% comments
+  // do it only if the setting `bakeHidden` is disabled
+  if (!settings.bakeHidden) {
+    const hiddenStart = text.indexOf('%%hidden%%');
+    const hiddenEnd = text.indexOf('%%/hidden%%', hiddenStart + 1);
+    if (hiddenStart !== -1 && hiddenEnd !== -1) {
+      text = text.substring(0, hiddenStart) + text.substring(hiddenEnd + 12);
     }
   }
 

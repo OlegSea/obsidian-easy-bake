@@ -51,8 +51,8 @@ Content of file four
 ---
 
 ## New feature
-This plugin now can work with "related" sections in files.
-If you denote some section of the file with `%%related%%` and `%%/related%%` tags, the plugin will ignore the text between these tags, unless the related option is set to true.
+This plugin now can work with "hidden" sections in files.
+If you denote some section of the file with `%%hidden%%` and `%%/hidden%%` tags, the plugin will ignore the text between these tags, unless the related option is set to true.
 
 
 For example,
@@ -71,9 +71,9 @@ This is an [[File three|inline link]].
 ```
 with File one containing:
 ```markdown
-%%related%%
+%%hidden%%
 This line should be ignored.
-%%/related%%
+%%/hidden%%
 Content of file one
 ```
 

@@ -84,11 +84,11 @@ export class BakeModal extends Modal {
       );
 
     new Setting(contentEl)
-      .setName('Bake related files')
-      .setDesc('If there is a section denoted by %%related%% and %%/related%%, should the extension bake its contents')
+      .setName('Bake hidden text')
+      .setDesc('If there is a section denoted by %%hidden%% and %%/hidden%%, should the extension bake its contents')
       .addToggle((toggle) =>
-        toggle.setValue(settings.bakeRelated).onChange((value) => {
-          settings.bakeRelated = value;
+        toggle.setValue(settings.bakeHidden).onChange((value) => {
+          settings.bakeHidden = value;
           plugin.saveSettings();
         })
       );
