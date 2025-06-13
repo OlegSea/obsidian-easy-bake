@@ -14,7 +14,7 @@ Compile your Obsidian notes into larger documents. This plugin is focused on sim
 
 Activate the plugin using the `Bake current file` command in [Obsidian's command palette](https://help.obsidian.md/Plugins/Command+palette).
 
-<img width="500" src="https://github.com/mgmeyers/obsidian-easy-bake/blob/master/assets/screenshot.png?raw=true">
+<img width="500" src="https://github.com/OlegSea/obsidian-easy-bake/blob/master/assets/screenshot.png?raw=true">
 
 Links and embeds that exist on their own line will be copied into the compiled document. Inline links will be replaced with the link's text. This process is recursive, meaning links in linked files will also be copied into the final document.
 
@@ -53,3 +53,42 @@ Content of file four
 ## New feature
 This plugin now can work with "related" sections in files.
 If you denote some section of the file with `%%related%%` and `%%/related%%` tags, the plugin will ignore the text between these tags, unless the related option is set to true.
+
+
+For example,
+
+```markdown
+## Section One
+
+[[File one]]
+[[File two]]
+
+## Section Three
+
+This is an [[File three|inline link]].
+
+[[File four]]
+```
+with File one containing:
+```markdown
+%%related%%
+This line should be ignored.
+%%/related%%
+Content of file one
+```
+
+will be compiled to:
+
+```markdown
+## Section One
+
+Content of file one
+Content of file two
+
+## Section Three
+
+This is an inline link.
+
+Content of file four
+```
+
